@@ -1,0 +1,483 @@
+-- phpMyAdmin SQL Dump
+-- version 4.2.7.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Apr 25, 2017 at 11:55 AM
+-- Server version: 5.5.39
+-- PHP Version: 5.4.31
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `auto-dijelovi`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `artikl`
+--
+
+CREATE TABLE IF NOT EXISTS `artikl` (
+`ID_artikl` int(11) NOT NULL,
+  `artikl_naziv` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `artikl_opis` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `artikl_cijena` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `artikl_valuta` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `artikl_stanje` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `artikl_kolièina` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `artikl_ID_model_vozila` int(11) DEFAULT NULL,
+  `slika_artikla` mediumtext COLLATE utf32_polish_ci
+) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_polish_ci AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `artikl`
+--
+
+INSERT INTO `artikl` (`ID_artikl`, `artikl_naziv`, `artikl_opis`, `artikl_cijena`, `artikl_valuta`, `artikl_stanje`, `artikl_kolièina`, `artikl_ID_model_vozila`, `slika_artikla`) VALUES
+(1, 'Mjenjaè', 'Mjenjaè za Golf 2', '5000', 'EUR', 'Polovno', '1', 13, 'mjenjac_golf2.jpg'),
+(2, 'Motor', 'Motor za Golf 2', '150', 'KM', 'Polovno', '1', 13, 'motor golf 2.jpg'),
+(3, 'Gume', 'Gume za A4', '600', 'KM', 'NOVO', '3', 1, 'a4_gume.jpg'),
+(4, 'Vrata', 'za A5', '300', 'KM', 'Polovno', '4', 2, 'a5_vrata.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `države`
+--
+
+CREATE TABLE IF NOT EXISTS `države` (
+`ID_države` int(11) NOT NULL,
+  `država_naziv` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `država_oznaka` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_polish_ci AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `države`
+--
+
+INSERT INTO `države` (`ID_države`, `država_naziv`, `država_oznaka`) VALUES
+(1, 'Bosna i Hercegovina', 'BIH'),
+(2, 'Hrvatska', 'HR'),
+(3, 'Njemaèka', 'GER'),
+(4, 'Austrija', 'AUT'),
+(5, 'Švicarska', 'SUI'),
+(6, 'Brazil', 'BRA'),
+(7, 'Peru', 'PE'),
+(9, 'Paragvaj', 'PAR');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gradovi`
+--
+
+CREATE TABLE IF NOT EXISTS `gradovi` (
+`ID_grad` int(11) NOT NULL,
+  `grad_naziv` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `grad_oznaka` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `grad_ID_država` int(11) DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_polish_ci AUTO_INCREMENT=12 ;
+
+--
+-- Dumping data for table `gradovi`
+--
+
+INSERT INTO `gradovi` (`ID_grad`, `grad_naziv`, `grad_oznaka`, `grad_ID_država`) VALUES
+(1, 'Glamoè', 'GL', 1),
+(2, 'Livno', 'LI', 1),
+(3, 'Travnik', 'TRA', 1),
+(4, 'Zagreb', 'ZAG', 2),
+(5, 'Split', 'ST', 2),
+(6, 'München', 'MUN', 3),
+(7, 'Augsburg', 'AUG', 3),
+(8, 'Wien', 'WIE', 4),
+(9, 'Basel', 'BAS', 5),
+(10, 'Sao Paolo', 'SPA', 6),
+(11, 'Èitluk', 'ÈT', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `korisnici`
+--
+
+CREATE TABLE IF NOT EXISTS `korisnici` (
+`ID_korisnik` int(11) NOT NULL,
+  `korisnik_ime` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `korisnik_prezime` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `korisnik_korisnicko_ime` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `korisnik_password` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `korisnik_vrsta` int(11) DEFAULT NULL,
+  `korisnik_email` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `korisnik_telefon` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `korisnik_ID_grad` int(11) DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_polish_ci AUTO_INCREMENT=14 ;
+
+--
+-- Dumping data for table `korisnici`
+--
+
+INSERT INTO `korisnici` (`ID_korisnik`, `korisnik_ime`, `korisnik_prezime`, `korisnik_korisnicko_ime`, `korisnik_password`, `korisnik_vrsta`, `korisnik_email`, `korisnik_telefon`, `korisnik_ID_grad`) VALUES
+(2, 'Marin', 'Bešlo', 'beslo', '12', 1, 'marin.beslo@gmail.com', '063123456', 1),
+(3, 'Petar', 'Vukoja', 'vuk', '12', 1, 'rope.madrid@gmail.com', '063123457', 2),
+(4, 'Mirko', 'Bagariæ', 'mirkan', '12', 1, 'mirkan.mirkadin@gmail.com', '063123458', 3),
+(5, 'Mateo', 'Gagro', 'gagrison', '12', 1, 'bas.gagrison@gmail.com', '063123459', 11),
+(6, 'Pobro', 'Everybody', 'pobro', '12', 2, 'pobro@gmail.com', '063111111', 1),
+(7, 'Pipo', 'Nobody', 'pipo', '12', 2, 'pipo@gmail.com', '063222222', 1),
+(8, 'Ime', 'Prezime', 'test', '12', 2, 'test.user@gmail.com', '063123456789', 1),
+(9, 'Marin', 'Bešlo', 'ðes pobro', '12', 1, '2', '5641516', 1),
+(10, 'Marin2', 'Bešlo', 'ðes pobro', '12', 1, '2', '5641516', 1),
+(11, 'Petar', 'Vukoja', 'rope', 'madrid', 2, 'izgubili', '063', 2),
+(12, 'aa', 'aa', 'aa', 'aa', 2, 'aa', 'aa', 4),
+(13, 'Neki', 'Korisnik', 'nekik', '12', 2, 'nedam.email@gmail.com', '03649516', 9);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `marka vozila`
+--
+
+CREATE TABLE IF NOT EXISTS `marka vozila` (
+`ID_marka_vozila` int(11) NOT NULL,
+  `marka_vozila_naziv` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `marka_vozila_ID_tip` int(11) DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_polish_ci AUTO_INCREMENT=24 ;
+
+--
+-- Dumping data for table `marka vozila`
+--
+
+INSERT INTO `marka vozila` (`ID_marka_vozila`, `marka_vozila_naziv`, `marka_vozila_ID_tip`) VALUES
+(1, 'Audi', 1),
+(2, 'BMW', 1),
+(3, 'Peugeot', 1),
+(4, 'Mercedes', 1),
+(5, 'VW', 1),
+(6, 'MAN', 2),
+(7, 'Scania', 2),
+(8, 'Mercedes', 2),
+(9, 'Volvo', 2),
+(10, 'Setra', 3),
+(11, 'Mercedes', 3),
+(12, 'Adria', 4),
+(13, 'Yamaha', 5),
+(14, 'Honda', 5),
+(15, 'Suzuki', 5),
+(16, 'Tomos', 5),
+(17, 'BMX', 6),
+(18, 'Bavaria-Camp', 4),
+(19, 'Pony', 6),
+(20, 'Capriolo', 6),
+(21, 'BIXS', 6),
+(22, 'Caterpillar', 7),
+(23, 'Komatsu', 7);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `model vozila`
+--
+
+CREATE TABLE IF NOT EXISTS `model vozila` (
+`ID_model_vozila` int(11) NOT NULL,
+  `model_vozila_naziv` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `model_vozila_ID_marka_vozila` int(11) DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_polish_ci AUTO_INCREMENT=24 ;
+
+--
+-- Dumping data for table `model vozila`
+--
+
+INSERT INTO `model vozila` (`ID_model_vozila`, `model_vozila_naziv`, `model_vozila_ID_marka_vozila`) VALUES
+(1, 'A4', 1),
+(2, 'A5', 1),
+(3, 'Q5', 1),
+(4, 'Q7', 1),
+(5, 'X1', 2),
+(6, '120', 2),
+(7, '320', 2),
+(8, 'X5', 2),
+(9, '123', 4),
+(10, 'A', 4),
+(11, 'B', 4),
+(12, 'C', 4),
+(13, 'Golf 2', 5),
+(14, 'Golf 4', 5),
+(15, 'Passat', 5),
+(16, 'Touareg', 5),
+(17, '307', 3),
+(18, '206', 3),
+(19, 'TGA', 6),
+(20, 'TGX', 6),
+(21, 'Actros', 8),
+(22, 'R460', 7),
+(23, 'FH12', 9);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `narudžba`
+--
+
+CREATE TABLE IF NOT EXISTS `narudžba` (
+`ID_narudžba` int(11) NOT NULL,
+  `narudžba_ID_korisnik` int(11) DEFAULT NULL,
+  `narudžba_datum` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `narudžba_adresa` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `narudžba_izvršenost` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_polish_ci AUTO_INCREMENT=20 ;
+
+--
+-- Dumping data for table `narudžba`
+--
+
+INSERT INTO `narudžba` (`ID_narudžba`, `narudžba_ID_korisnik`, `narudžba_datum`, `narudžba_adresa`, `narudžba_izvršenost`) VALUES
+(6, 2, 'Motor', 'Motor', 'Motor'),
+(8, 2, 'Motor', 'Motor', 'Motor'),
+(9, 3, 'Gume', 'Gume', 'Gume'),
+(10, 2, '04.04.2017.', 'Motor', 'Motor'),
+(11, 2, '04.04.2017.', 'Kralja Petra Krešimira IV', 'Nije dostavljeno'),
+(12, 2, '04.04.2017.', 'Kralja Petra Krešimira IV', 'Nije dostavljeno'),
+(13, 2, '04.04.2017.', 'Kralja Petra Krešimira IV', 'Nije dostavljeno'),
+(14, 2, '04.04.2017.', 'Kralja Petra Krešimira IV', 'Nije dostavljeno'),
+(15, 2, '04.04.2017.', 'Kralja Petra Krešimira IV', 'Nije dostavljeno'),
+(16, 2, '04.04.2017.', 'Kralja Petra Krešimira IV', 'Nije dostavljeno'),
+(17, 2, '04.04.2017.', 'Kralja Petra Krešimira IV', 'Nije dostavljeno'),
+(18, 2, '04.04.2017.', 'Kralja Petra Krešimira IV', 'Nije dostavljeno'),
+(19, 2, '04.04.2017.', 'Kralja Petra Krešimira IV', 'Nije dostavljeno');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sigurnost`
+--
+
+CREATE TABLE IF NOT EXISTS `sigurnost` (
+`SigurnostID` int(11) NOT NULL,
+  `Sigurnost_vrsta` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_polish_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `sigurnost`
+--
+
+INSERT INTO `sigurnost` (`SigurnostID`, `Sigurnost_vrsta`) VALUES
+(1, 'admin'),
+(2, 'korisnik');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stavke`
+--
+
+CREATE TABLE IF NOT EXISTS `stavke` (
+`ID_stavka` int(11) NOT NULL,
+  `stavka_kolièina` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `stavka_stanje` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL,
+  `stavka_ID_artikl` int(11) DEFAULT NULL,
+  `stavka_ID_narudžba` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_polish_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tip vozila`
+--
+
+CREATE TABLE IF NOT EXISTS `tip vozila` (
+`ID_tip_vozila` int(11) NOT NULL,
+  `tip_vozila_naziv` varchar(255) COLLATE utf32_polish_ci DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf32 COLLATE=utf32_polish_ci AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `tip vozila`
+--
+
+INSERT INTO `tip vozila` (`ID_tip_vozila`, `tip_vozila_naziv`) VALUES
+(1, 'Automobil'),
+(2, 'Kamion'),
+(3, 'Autobus'),
+(4, 'Kamp-kuæica'),
+(5, 'Motocikl'),
+(6, 'Bicikl'),
+(7, 'Radne mašine');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `artikl`
+--
+ALTER TABLE `artikl`
+ ADD PRIMARY KEY (`ID_artikl`), ADD KEY `artikl_ID_model_vozila` (`artikl_ID_model_vozila`);
+
+--
+-- Indexes for table `države`
+--
+ALTER TABLE `države`
+ ADD PRIMARY KEY (`ID_države`);
+
+--
+-- Indexes for table `gradovi`
+--
+ALTER TABLE `gradovi`
+ ADD PRIMARY KEY (`ID_grad`), ADD KEY `grad_ID_država` (`grad_ID_država`);
+
+--
+-- Indexes for table `korisnici`
+--
+ALTER TABLE `korisnici`
+ ADD PRIMARY KEY (`ID_korisnik`), ADD KEY `korisnik_ID_grad` (`korisnik_ID_grad`), ADD KEY `korisnik_vrsta` (`korisnik_vrsta`);
+
+--
+-- Indexes for table `marka vozila`
+--
+ALTER TABLE `marka vozila`
+ ADD PRIMARY KEY (`ID_marka_vozila`), ADD KEY `marka_vozila_ID_tip` (`marka_vozila_ID_tip`);
+
+--
+-- Indexes for table `model vozila`
+--
+ALTER TABLE `model vozila`
+ ADD PRIMARY KEY (`ID_model_vozila`), ADD KEY `model_vozila_ID_marka_vozila` (`model_vozila_ID_marka_vozila`);
+
+--
+-- Indexes for table `narudžba`
+--
+ALTER TABLE `narudžba`
+ ADD PRIMARY KEY (`ID_narudžba`), ADD KEY `narudžba_ID_korisnik` (`narudžba_ID_korisnik`);
+
+--
+-- Indexes for table `sigurnost`
+--
+ALTER TABLE `sigurnost`
+ ADD PRIMARY KEY (`SigurnostID`);
+
+--
+-- Indexes for table `stavke`
+--
+ALTER TABLE `stavke`
+ ADD PRIMARY KEY (`ID_stavka`), ADD KEY `stavka_ID_artikl` (`stavka_ID_artikl`), ADD KEY `stavka_ID_narudžba` (`stavka_ID_narudžba`);
+
+--
+-- Indexes for table `tip vozila`
+--
+ALTER TABLE `tip vozila`
+ ADD PRIMARY KEY (`ID_tip_vozila`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `artikl`
+--
+ALTER TABLE `artikl`
+MODIFY `ID_artikl` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `države`
+--
+ALTER TABLE `države`
+MODIFY `ID_države` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `gradovi`
+--
+ALTER TABLE `gradovi`
+MODIFY `ID_grad` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT for table `korisnici`
+--
+ALTER TABLE `korisnici`
+MODIFY `ID_korisnik` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT for table `marka vozila`
+--
+ALTER TABLE `marka vozila`
+MODIFY `ID_marka_vozila` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
+--
+-- AUTO_INCREMENT for table `model vozila`
+--
+ALTER TABLE `model vozila`
+MODIFY `ID_model_vozila` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
+--
+-- AUTO_INCREMENT for table `narudžba`
+--
+ALTER TABLE `narudžba`
+MODIFY `ID_narudžba` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+--
+-- AUTO_INCREMENT for table `sigurnost`
+--
+ALTER TABLE `sigurnost`
+MODIFY `SigurnostID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `stavke`
+--
+ALTER TABLE `stavke`
+MODIFY `ID_stavka` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tip vozila`
+--
+ALTER TABLE `tip vozila`
+MODIFY `ID_tip_vozila` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `artikl`
+--
+ALTER TABLE `artikl`
+ADD CONSTRAINT `artikl_ibfk_1` FOREIGN KEY (`artikl_ID_model_vozila`) REFERENCES `model vozila` (`ID_model_vozila`);
+
+--
+-- Constraints for table `gradovi`
+--
+ALTER TABLE `gradovi`
+ADD CONSTRAINT `gradovi_ibfk_1` FOREIGN KEY (`grad_ID_država`) REFERENCES `države` (`ID_države`);
+
+--
+-- Constraints for table `korisnici`
+--
+ALTER TABLE `korisnici`
+ADD CONSTRAINT `korisnici_ibfk_1` FOREIGN KEY (`korisnik_ID_grad`) REFERENCES `gradovi` (`ID_grad`),
+ADD CONSTRAINT `korisnici_ibfk_2` FOREIGN KEY (`korisnik_vrsta`) REFERENCES `sigurnost` (`SigurnostID`);
+
+--
+-- Constraints for table `marka vozila`
+--
+ALTER TABLE `marka vozila`
+ADD CONSTRAINT `marka vozila_ibfk_1` FOREIGN KEY (`marka_vozila_ID_tip`) REFERENCES `tip vozila` (`ID_tip_vozila`);
+
+--
+-- Constraints for table `model vozila`
+--
+ALTER TABLE `model vozila`
+ADD CONSTRAINT `model vozila_ibfk_1` FOREIGN KEY (`model_vozila_ID_marka_vozila`) REFERENCES `marka vozila` (`ID_marka_vozila`);
+
+--
+-- Constraints for table `narudžba`
+--
+ALTER TABLE `narudžba`
+ADD CONSTRAINT `narudžba_ibfk_1` FOREIGN KEY (`narudžba_ID_korisnik`) REFERENCES `korisnici` (`ID_korisnik`);
+
+--
+-- Constraints for table `stavke`
+--
+ALTER TABLE `stavke`
+ADD CONSTRAINT `stavke_ibfk_1` FOREIGN KEY (`stavka_ID_artikl`) REFERENCES `artikl` (`ID_artikl`),
+ADD CONSTRAINT `stavke_ibfk_2` FOREIGN KEY (`stavka_ID_narudžba`) REFERENCES `narudžba` (`ID_narudžba`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
