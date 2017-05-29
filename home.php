@@ -58,7 +58,7 @@
 		}*/
 		
 	</script>
-	<script src="typeahead.min.js"></script>
+	<script src="js/typeahead.min.js"></script>
 	<script>
 		$(document).ready(function(){
 			$('input.typeahead').typeahead({
@@ -100,6 +100,9 @@
                     <li>
                         <a href="usluge.html">Usluge</a>
                     </li>
+					<li>
+                        <a href="web_servisi.php">Web servisi</a>
+                    </li>
                     <li>
                         <a href="contact.php">Kontakt</a>
                     </li>
@@ -110,7 +113,7 @@
 				<div class=".col-md-6">
 					<div>
 						<div class="bs-example">
-							<form name="form" action="details.php" method="post">
+							<form name="form"  method="post">
 								<input type="text" name="vehicle" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Izaberite model..." value="" />
 								<input id="search" type="submit" value="Pretraži" />
 							</form>
@@ -189,12 +192,13 @@
     <!-- /.container -->
 	
 
-	<!-- 
+	 <!--
     <script src="js/jquery.js"></script>
 	
     
     <script src="js/bootstrap.min.js"></script>
 	-->
+	
 
 </body>
 
