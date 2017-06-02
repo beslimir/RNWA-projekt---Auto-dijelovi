@@ -9,14 +9,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Kontakt</title>
+    <title>Auto-dijelovi 2MB</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	
 
     <!-- Custom CSS -->
-    <link href="css/small-business.css" rel="stylesheet">
-	<link href="css/contact-css.css" rel="stylesheet">
+    <link href="../css/small-business.css" rel="stylesheet">
+	 <link href="../css/round-about.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,26 +42,26 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">
-                    <img src="images/logo.png" alt="Logo" height="150" width="150" style="margin-top:-50px;"/>
+                    <img src="../images/logo.png" alt="Logo" height="150" width="150" style="margin-top:-50px;"/>
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 					<li>
-						<a href="home.php">Početna</a>
-					</li>
-                    <li>
-                        <a href="about_us.php">O nama</a>
+                        <a href="../home.php">Početna</a>
                     </li>
                     <li>
-                        <a href="usluge.html">Usluge</a>
+                        <a href="../about_us.php">O nama</a>
+                    </li>
+                    <li>
+                        <a href="../usluge.html">Usluge</a>
                     </li>
 					<li>
-                        <a href="web_servisi.php">Web servisi</a>
+                        <a href="../web_servisi.php">Web servisi</a>
                     </li>
                     <li>
-                        <a href="contact.php">Kontakt</a>
+                        <a href="../contact.php">Kontakt</a>
                     </li>
                 </ul>
             </div>
@@ -69,63 +70,54 @@
         <!-- /.container -->
     </nav>
 
-    <!-- Page Content -->
     <div class="container">
 
-        <!-- Heading Row -->
+        <!-- Introduction Row -->
         <div class="row">
-            <div class="col-md-8">
-                <img class="img-responsive img-rounded" src="images/wallpaper.jpg" alt="" width="900" height="350">
+            <div class="col-lg-12">
+                <h1 class="page-header">Traženi pojam
+                    <small>  rezultati pretrage</small>
+                </h1>
+                <p class="pocetak">
+					<?php # HelloClient.php
+# Copyright (c) 2005 by Dr. Herong Yang
+#  
+
+	$naziv=$_POST['trazilicax'];
+    $client = new SoapClient(null, array(
+      'location' => "http://localhost/rnwa/no_wsdl/server.php",
+      'uri'      => "urn://neretva.fsr.ba/hello",
+      'trace'    => 1 ));
+
+    $return = $client->__soapCall("artikl", array("$naziv"));
+   	echo("\n<pre>".$return)."</pre>";
+
+?>
+				</p>
             </div>
-            <!-- /.col-md-8 -->
-            <div class="col-md-4">
-                <h1>Auto-dijelovi 2MB</h1>
-                <p>Auto-dijelovi 2MB d.o.o. je poduzeće koje Vam nudi usluge kupovine dijelova za vozila raznih vrsta, tehnički pregled, popravke te druge usluge.</p>
-                <a class="btn btn-primary btn-lg" href="#">Opširnije...</a>
-            </div>
-            <!-- /.col-md-4 -->
         </div>
-        <!-- /.row -->
 
-        <hr>
-
-        <!-- /.row -->
-
-        <!-- Content Row -->
-        <div class="row">
-			<h1>Kontaktirajte nas...</h1>
-			<form class="cf">
-			    <div class="half left cf">
-					<input type="text" id="input-name" placeholder="Name">
-					<input type="email" id="input-email" placeholder="Email address">
-					<input type="text" id="input-subject" placeholder="Subject">
-			    </div>
-			    <div class="half right cf">
-					<textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
-			    </div>  
-				
-			    <input type="submit" value="Submit" id="input-submit">
-			</form>
-        </div>
-        <!-- /.row -->
+        
 
         <!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Bešlimir's 2017.</p>
+                    
                 </div>
+                <!-- /.col-lg-12 -->
             </div>
+            <!-- /.row -->
         </footer>
 
     </div>
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
 </body>
 

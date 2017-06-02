@@ -1,11 +1,8 @@
-<?php
-	if(isset($_POST['typeahead'])){
-		$model = $_POST['typeahead'];
-	}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+<?php
+	$pipo = "pipo";
+?>
 
 <head>
 
@@ -33,6 +30,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 	
+	<script src="typeahead.min.js"></script>
 	<script>
 		/*function showResult(str) {
 		    if (str.length==0) { 
@@ -57,7 +55,7 @@
 		}*/
 		
 	</script>
-	<script src="js/typeahead.min.js"></script>
+	<script src="typeahead.min.js"></script>
 	<script>
 		$(document).ready(function(){
 			$('input.typeahead').typeahead({
@@ -84,62 +82,47 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">
-                    <img src="images/logo.png" alt="Logo" height="150" width="150" style="margin-top:-50px;"/>
+                    <img src="images/logo.png" alt="Logo" height="50" width="150"/>
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 					<li>
-						<a href="home.php">Početna</a>
+						<a href="index.html">Početna</a>
 					</li>
                     <li>
-                        <a href="about_us.php">O nama</a>
+                        <a href="onama.html">O nama</a>
                     </li>
                     <li>
                         <a href="usluge.html">Usluge</a>
                     </li>
-					<li>
-                        <a href="web_servisi.php">Web servisi</a>
-                    </li>
                     <li>
-                        <a href="contact.php">Kontakt</a>
+                        <a href="kontakt.html">Kontakt</a>
                     </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-		<!-- <div class="row">
+			<div class="row">
 				<div class=".col-md-6">
 					<div>
 						<div class="bs-example">
-							<form name="form"  method="post">
-								<input type="text" name="vehicle" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Izaberite model..." value="" />
-								<input id="search" type="submit" value="Pretraži" />
+							<form name="form" action="" method="post">
+								<input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Izaberite model..." >
+								<input type="submit" value="Pretraži" />
 							</form>
 						</div>
 					</div>
 				</div>
-		</div> -->
+			</div>
+        </div>
+        <!-- /.container -->
     </nav>
 
     <!-- Page Content -->
-	<!-- style="padding-top:20px;" set to container below -->
-    <div class="container" >
+    <div class="container">
+
         <!-- Heading Row -->
-		<div class="row">
-				<div class=".col-md-6">
-					<div>
-						<div class="bs-example">
-							<form name="form" action="Details.php" method="post">
-								<input type="text" name="vehicle" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Izaberite model..." value="" />
-								<input id="search" type="submit" value="Pretraži" />
-							</form>
-						</div>
-					</div>
-				</div>
-		</div>
         <div class="row">
             <div class="col-md-8">
                 <img class="img-responsive img-rounded" src="images/wallpaper.jpg" alt="" width="900" height="350">
@@ -148,6 +131,7 @@
             <div class="col-md-4">
                 <h1>Auto-dijelovi 2MB</h1>
                 <p>Auto-dijelovi 2MB d.o.o. je poduzeće koje Vam nudi usluge kupovine dijelova za vozila raznih vrsta, tehnički pregled, popravke te druge usluge.</p>
+				<p><?php echo "pipo";?></p>
                 <a class="btn btn-primary btn-lg" href="#">Opširnije...</a>
             </div>
             <!-- /.col-md-4 -->
@@ -156,7 +140,16 @@
 
         <hr>
 
-     
+        <!-- Call to Action Well -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center">
+                    Započni pretragu...
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
 
         <!-- Content Row -->
         <div class="row">
@@ -194,13 +187,12 @@
     <!-- /.container -->
 	
 
-	 <!--
+	<!-- 
     <script src="js/jquery.js"></script>
 	
     
     <script src="js/bootstrap.min.js"></script>
 	-->
-	
 
 </body>
 

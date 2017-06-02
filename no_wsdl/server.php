@@ -1,11 +1,5 @@
 <?php
-	if(!extension_loaded("soap")){
-	  dl("php_soap.dll");
-	}
-	ini_set("soap.wsdl_cache_enabled",0);
-	$server = new SoapServer("ispis.wsdl");
-	
-	function findArticle($yourName){
+	function artikl($yourName){
 		$username = "root";
 		$password = "";
 		$hostname = "localhost"; 
@@ -23,7 +17,6 @@
 		);
 
 		$response = array();
-		  
 		while ($row = mysql_fetch_array($result)) {
 			$tmp = array();
 			$tmp["artikl_naziv"]         = $row["artikl_naziv"]; 
@@ -47,10 +40,11 @@
 			
 		$jsonn = json_encode($response);
 		  
-		//return $jsonn;
-		return $privremeni;
+		return $jsonn;
+		//return $privremeni;
 	}
 	
-	$server->AddFunction("findArticle");
-	$server->handle();
+	$server = new SoapServer(null, array('uri' => "urn://www.herong.home/res"));
+    $server->addFunction("artikl"); 
+    $server->handle(); 
 ?>

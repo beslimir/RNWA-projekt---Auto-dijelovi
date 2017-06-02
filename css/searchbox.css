@@ -8,7 +8,7 @@
 	border: 2px solid #CCCCCC;
 	border-radius: 8px;
 	font-size: 24px;
-	height: 30px;
+	height: 50px;
 	line-height: 30px;
 	outline: medium none;
 	padding: 8px 12px;
@@ -48,7 +48,9 @@
 	margin: 0;
 }
 #search {
-    width: 20em;  
-	height: 2em;
+	margin: 0 auto;
+    width: 28.2em;  
+	height: 3.5em;
+	background-color: #d1d3d6;
 }
 </style>

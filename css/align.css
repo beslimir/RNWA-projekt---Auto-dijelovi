@@ -1,0 +1,19 @@
+.txtbox{
+    display: block;
+    float: left;
+    height: 30px;
+    width: 100px;
+	margin-top: 5px;
+}
+
+.btncls{
+    display: block;
+    float: left;
+    height: 30px;
+    width: 80px;
+	margin-left: 5px;
+}
+
+.noPaddingForName{
+	margin-bottom:-5px;
+}

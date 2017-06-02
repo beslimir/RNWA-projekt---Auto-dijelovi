@@ -42,7 +42,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">
-                    <img src="images/logo.png" alt="Logo" height="50" width="150"/>
+                    <img src="images/logo.png" alt="Logo" height="150" width="150" style="margin-top:-50px;"/>
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->

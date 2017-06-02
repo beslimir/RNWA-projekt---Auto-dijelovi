@@ -13,6 +13,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/align.css" rel="stylesheet">
 	
 
     <!-- Custom CSS -->
@@ -42,7 +43,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">
-                    <img src="images/logo.png" alt="Logo" height="50" width="150"/>
+                    <img src="images/logo.png" alt="Logo" height="150" width="150" style="margin-top:-50px;"/>
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -97,8 +98,9 @@
         <!-- Introduction Row -->
         <div class="row">
             <div class="col-lg-10">
-                <h1>Ispis artikla</h1>
-				
+                <h1 class="page-header">Ispis artikla za pojedini model
+				<small> WSDL</small>
+				</h1>
 				<!-- 1.	Putem WSDL-a -  kreirajte web servis koji na osnovu naziva modela vozila (koji se šalje kao jedini argument funkcije) ispisuje dostupne artikle s ostalim  podacima artikla. Klijentski dio poziva web servisa realizirati kao html/web  forma u s poljem za pretraživanje u koje unosimo pojam za pretraživanje i koje nakon submit akcije poziva traženi  web servis koji vraća rezultate a klijentska stranica ih ispisuje u prilagođen, proizvoljnom ispisu -->
 					<?php
 						if (isset($_REQUEST["naziv"])){
@@ -117,14 +119,15 @@
 										'pass' => '',
 										'exceptions' => 0
 									));
-								$response = $sClient->doHello($params);
+								$response = $sClient->findArticle($params);
 								echo "<br><br>ODGOVOR:<br>";
 
 								$risponz = $sClient->__getLastResponse();
 								$json_2 = str_replace(array('[',']') , ''  , $risponz );
 								$jsonn = json_encode($json_2);
-									
+								
 								echo '<pre>' . $json_2  . '</pre>';
+								
 							} catch(SoapFault $e){
 								echo $e->getMessage();
 							}
@@ -132,13 +135,19 @@
 							echo "Unesite naziv modela kako bi dobili tražene artikle s opisom.<br>";
 							echo "<p>Forma poziva web servis koji pretražuje artikle s nazivom koji ste unijeli - vraća JSON odgovor u ovom slučaju</p> ";
 							echo "<form method=\"get\" action=\"".htmlspecialchars($_SERVER["PHP_SELF"])."\">";
-							echo "Naziv artikla: <input type=\"text\" name=\"naziv\">";
+							echo "Naziv modela:<br> <input type=\"text\" name=\"naziv\" placeholder=\"WSDL\" style=\"width:200px;\">";
 							echo " <input type=\"submit\" name=\"submit\" value=\"Pretraga\"> ";
 							echo "</form>";     
 						}       
 					?>
 			</div>
 		</div>
+		<form action="no_wsdl/client.php" action="details.php" method="post" style="margin-top:20px;">
+			<p class="noPaddingForName">Naziv modela:</p>
+            <input class="txtbox" type="text" class="form-control" placeholder="No WSDL" name="trazilicax" style="width:200px;">
+			<button class="btncls" style="margin-top:5px;">Pretraga</button>
+        </form>
+				
 </body>
 
 </html>

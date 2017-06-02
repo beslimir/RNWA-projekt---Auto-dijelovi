@@ -1,42 +1,42 @@
 <?xml version="1.0"?>
-<definitions name="HelloWorld" targetNamespace="urn:HelloWorld" xmlns:tns="urn:HelloWorld"  xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+<definitions name="Workstation" targetNamespace="urn:Workstation" xmlns:tns="urn:Workstation"  xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
-    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:Hello">
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:article">
       <xsd:element name="getName" type="xsd:string" />
-	  <xsd:element name="HelloResponse" type="xsd:string" />	 	  
+	  <xsd:element name="ArticleResponse" type="xsd:string" />	 	  
 	</xsd:schema>			
   </types>
   
-  <message name="doHello">
+  <message name="findArticle">
     <part name="yourName" type="tns:getName" />
   </message>
   
-  <message name="doHelloResponse">
-    <part name="return" type="tns:HelloResponse"/>
+  <message name="findArticleResponse">
+    <part name="return" type="tns:ArticleResponse"/>
   </message>  
   
-  <portType name="HelloPort">
-    <operation name="doHello">
-	  <input message="tns:doHello" />
-	  <output message="tns:doHelloResponse" />
+  <portType name="ArticlePort">
+    <operation name="findArticle">
+	  <input message="tns:findArticle" />
+	  <output message="tns:findArticleResponse" />
 	</operation>
   </portType>
   
-  <binding name="HelloBinding" type="tns:HelloPort">
+  <binding name="ArticleBinding" type="tns:ArticlePort">
     <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
-	  <operation name="doHello">
-	    <soap:operation soapAction="urn:HelloAction" />
+	  <operation name="findArticle">
+	    <soap:operation soapAction="urn:ArticleAction" />
 		<input>
-		  <soap:body use="encoded" namespace="urn:Hello" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />		  
+		  <soap:body use="encoded" namespace="urn:article" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />		  
 		</input>
 		<output>
-		  <soap:body use="encoded" namespace="urn:Hello" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />		  
+		  <soap:body use="encoded" namespace="urn:article" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />		  
 		</output>
 	  </operation>
   </binding>
   
-  <service name="HelloService">
-    <port name="HelloPort" binding="tns:HelloBinding">
+  <service name="ArticleService">
+    <port name="ArticlePort" binding="tns:ArticleBinding">
 	  <soap:address location="http://localhost/rnwa/server.php" /> 
 	</port>
   </service>
