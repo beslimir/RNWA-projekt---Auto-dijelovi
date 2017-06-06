@@ -80,8 +80,8 @@
         <!-- Introduction Row -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">O nama
-                    <small>  2MB</small>
+                <h1 class="page-header">MVC
+                    <small>  Model-View-Controller</small>
                 </h1>
                 <p class="pocetak">Za odabrani projekt potrebno je:
 a) Instalirati razvojno okruženje za projektni zadatak (wamp, xampp, i sl)

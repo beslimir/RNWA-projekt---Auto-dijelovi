@@ -57,6 +57,12 @@
                     <li>
                         <a href="usluge.html">Usluge</a>
                     </li>
+					<li>
+                        <a href="web_servisi.php">Web servisi</a>
+                    </li>
+					<li>
+                        <a href="mvc.php">MVC</a>
+                    </li>
                     <li>
                         <a href="contact.php">Kontakt</a>
                     </li>

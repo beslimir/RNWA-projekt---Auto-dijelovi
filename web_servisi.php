@@ -56,10 +56,13 @@
                         <a href="about_us.php">O nama</a>
                     </li>
                     <li>
-                        <a href="usluge.html">Usluge</a>
+                        <a href="services.php">Usluge</a>
                     </li>
 					<li>
                         <a href="web_servisi.php">Web servisi</a>
+                    </li>
+					<li>
+                        <a href="mvc.php">MVC</a>
                     </li>
                     <li>
                         <a href="contact.php">Kontakt</a>

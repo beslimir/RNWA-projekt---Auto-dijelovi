@@ -17,7 +17,8 @@
 
     <!-- Custom CSS -->
     <link href="css/small-business.css" rel="stylesheet">
-	 <link href="css/round-about.css" rel="stylesheet">
+	<link href="css/round-about.css" rel="stylesheet">
+	
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,24 +42,30 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
-                    <img src="images/logo.png" alt="Logo" height="50" width="150"/>
+                <a class="navbar-brand" href="home.php">
+                    <img src="images/logo.png" alt="Logo" height="150" width="150" style="margin-top:-50px;"/>
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 					<li>
-                        <a href="index.html">Početna</a>
+                        <a href="home.php">Početna</a>
                     </li>
                     <li>
-                        <a href="onama.html">O nama</a>
+                        <a href="about_us.php">O nama</a>
                     </li>
                     <li>
-                        <a href="usluge.html">Usluge</a>
+                        <a href="services.php">Usluge</a>
+                    </li>
+					<li>
+                        <a href="web_servisi.php">Web servisi</a>
+                    </li>
+					<li>
+                        <a href="mvc.php">MVC</a>
                     </li>
                     <li>
-                        <a href="kontakt.html">Kontakt</a>
+                        <a href="contact.php">Kontakt</a>
                     </li>
                 </ul>
             </div>
@@ -100,14 +107,13 @@ vašeg projekta;</p>
         <!-- Team Members Row -->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Naš tim</h2>
+                <h2 class="page-header">Usluge</h2>
             </div>
            
             <div class="emp" >
-                <img class=" img-responsive img-center" src="images/beslo.jpg" alt="">
-                <h3 class="ime">Marin Bešlo
-                    <small>Bachelor of Computing</small>
-                </h3>
+			<h3 class="ime">Kupovina dijelova</h3>
+                <img class=" img-responsive img-center" style="width:250px;" src="images/dijelovi.jpg" alt="">
+                
                 <p class="ime2">Implementirati pretraživanje zapisa/redaka iz baze
 podataka, putem AJAX metode, sa sljedećom
 funkcionalnošću :
@@ -121,12 +127,29 @@ na dva načina:
 XMLHttpRequest objekta a
 2) AJAX 2 je putem JQUERY ajax metoda</p>
             </div>
-            <div class="emp">
-                <img class=" img-responsive img-center" src="images/mirko.jpg" alt="">
-                <h3 class="ime">Mirko Bagarić
-                    <small>Prva lopata Travnika</small>
-                </h3>
+            
+			<div class="emp">
+			<h3 class="ime">Tehnički pregled</h3>
+                <img class=" img-responsive img-center" style="width:250px;" src="images/tehnickii.jpg" alt="">
+                
                 <p class="ime2">Implementirati pretraživanje zapisa/redaka iz baze
+podataka, putem AJAX metode, sa sljedećom
+funkcionalnošću :
+Na osnovu naziva modela vozila koji se upisuje u polje
+formeza pretraživanje, dinamički nakon upisa prvog
+znaka ispisuje dostupne artikle s ostalim podacima
+artikla, u HTML tablici koja će se prikazati ispod forme
+za pretraživanje unutar određenog DIV-a,
+na dva načina:
+1) AJAX 1 je putem klasičnog Javascript
+XMLHttpRequest objekta a
+2) AJAX 2 je putem JQUERY ajax metoda</p>
+            </div>
+			<div align=center;>
+			<h3 class="ime">Popravak</h3>
+                <img class=" img-responsive img-center" style="width:300px;" src="images/tehnickiii.png" alt="">
+                
+                <p class="ime3" align=center;>Implementirati pretraživanje zapisa/redaka iz baze
 podataka, putem AJAX metode, sa sljedećom
 funkcionalnošću :
 Na osnovu naziva modela vozila koji se upisuje u polje
@@ -145,9 +168,9 @@ XMLHttpRequest objekta a
 
         <!-- Footer -->
         <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+            <div>
+                <div class="footerr">
+                    <p style="text-align:center; margin-top:30px;">Copyright &copy; 2MB website 2017.</p>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

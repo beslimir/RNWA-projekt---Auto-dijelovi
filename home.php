@@ -83,8 +83,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
-                    <img src="images/logo.png" alt="Logo" height="150" width="150" style="margin-top:-50px;"/>
+                <a class="navbar-brand" href="home.php">
+                    <img src="images/logo.png" alt="Logo" href="home.php" height="150" width="150" style="margin-top:-50px;"/>
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -97,10 +97,13 @@
                         <a href="about_us.php">O nama</a>
                     </li>
                     <li>
-                        <a href="usluge.html">Usluge</a>
+                        <a href="services.php">Usluge</a>
                     </li>
 					<li>
                         <a href="web_servisi.php">Web servisi</a>
+                    </li>
+					<li>
+                        <a href="mvc.php">MVC</a>
                     </li>
                     <li>
                         <a href="contact.php">Kontakt</a>
@@ -148,7 +151,7 @@
             <div class="col-md-4">
                 <h1>Auto-dijelovi 2MB</h1>
                 <p>Auto-dijelovi 2MB d.o.o. je poduzeće koje Vam nudi usluge kupovine dijelova za vozila raznih vrsta, tehnički pregled, popravke te druge usluge.</p>
-                <a class="btn btn-primary btn-lg" href="#">Opširnije...</a>
+                <a class="btn btn-primary btn-lg" href="about_us.php">Opširnije...</a>
             </div>
             <!-- /.col-md-4 -->
         </div>
@@ -163,19 +166,19 @@
             <div class="col-md-4">
                 <h2>Kupovina auto dijelova</h2>
                 <p>U širokom izboru naše web trgovine možete pronaći polovne i nove dijelove za razne vrste vozila. Slanje brzom poštom, a ugradnja samih dijelova se vrši u prostorima naše firme.</p>
-                <a class="btn btn-default" href="#">More Info</a>
+                <a class="btn btn-default" href="services.php">Više informacija</a>
             </div>
             <!-- /.col-md-4 -->
             <div class="col-md-4">
                 <h2>Tehnički pregled</h2>
                 <p>Tehnički pregled vozila se provodi u skladu sa županijskim zakonom "Zakon o osnovama sigurnosti prometovanja na putevima u Bosni i Hercegovini.</p>
-                <a class="btn btn-default" href="#">More Info</a>
+                <a class="btn btn-default" href="services.php">Više informacija</a>
             </div>
             <!-- /.col-md-4 -->
             <div class="col-md-4">
                 <h2>Popravak</h2>
                 <p>Nudimo usluge popravka vozila te ugradnju raznih dijelova, sukladno vašim potrebama, po najvišim standardima reguliranim državnim zakonima o sigurnosti u prometu.</p>
-                <a class="btn btn-default" href="#">More Info</a>
+                <a class="btn btn-default" href="services.php">Više informacija</a>
             </div>
             <!-- /.col-md-4 -->
         </div>
