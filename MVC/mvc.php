@@ -9,7 +9,7 @@
     $action     = 'home';
   }
 
-	if($controller == 'modeli')
+	if($controller == 'modeli' || $controller == 'artikli')
 		require_once('views/details.php');
     else{
 		require_once('views/layout.php');

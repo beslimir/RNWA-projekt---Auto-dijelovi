@@ -9,5 +9,9 @@
     $action     = 'home';
   }
 
-  require_once('views/layout.php');
+	if($controller == 'modeli')
+		require_once('views/details.php');
+    else{
+		require_once('views/layout.php');
+    }
 ?>
