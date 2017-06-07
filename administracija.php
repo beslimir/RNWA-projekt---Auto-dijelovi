@@ -203,15 +203,15 @@ if (isset($_SESSION['logiran'])) {
 
 		echo "<form action='administracija.php' method='get'>";
 		echo "<table>";
-		echo "<tr><td>ID_ARTIKL: </td><td><input type='text' name='ID_ARTIKL' value='' size='50'></td></tr>";
-		echo "<tr><td>ARTIKL_NAZIV: </td><td><input type='text' name='ARTIKL_NAZIV' value='' size='50'></td></tr>";
-		echo "<tr><td>ARTIKL_OPIS: </td><td><input type='text' name='ARTIKL_OPIS' value='' size='50'></td></tr>";
-		echo "<tr><td>ARTIKL_CIJENA: </td><td><input type='text' name='ARTIKL_CIJENA' value='' size='50'></td></tr>";
-		echo "<tr><td>ARTIKL_VALUTA: </td><td><input type='text' name='ARTIKL_VALUTA' value='' size='50'></td></tr>";
-		echo "<tr><td>ARTIKL_STANJE: </td><td><input type='text' name='ARTIKL_STANJE' value='' size='50'></td></tr>";
-		echo "<tr><td>ARTIKL_KOLIČINA: </td><td><input type='text' name='ARTIKL_KOLIČINA' value='' size='50'></td></tr>";
-		echo "<tr><td>ARTIKL_ID_VOZILA: </td><td><input type='text' name='ARTIKL_ID_VOZILA' value='' size='50'></td></tr>";
-		echo "<tr><td>SLIKA_ARTIKLA: </td><td><input type='text' name='SLIKA_ARTIKLA' value='' size='30'></td></tr>";
+		echo "<tr><td>ID ARTIKLA: </td><td><input type='text' name='ID_ARTIKL' value='' size='50'></td></tr>";
+		echo "<tr><td>NAZIV ARTIKLA: </td><td><input type='text' name='ARTIKL_NAZIV' value='' size='50'></td></tr>";
+		echo "<tr><td>OPIS ARTIKLA: </td><td><input type='text' name='ARTIKL_OPIS' value='' size='50'></td></tr>";
+		echo "<tr><td>CIJENA ARTIKLA: </td><td><input type='text' name='ARTIKL_CIJENA' value='' size='50'></td></tr>";
+		echo "<tr><td>VALUTA: </td><td><input type='text' name='ARTIKL_VALUTA' value='' size='50'></td></tr>";
+		echo "<tr><td>STANJE: </td><td><input type='text' name='ARTIKL_STANJE' value='' size='50'></td></tr>";
+		echo "<tr><td>KOLIČINA: </td><td><input type='text' name='ARTIKL_KOLIČINA' value='' size='50'></td></tr>";
+		echo "<tr><td>ID VOZILA: </td><td><input type='text' name='ARTIKL_ID_VOZILA' value='' size='50'></td></tr>";
+		echo "<tr><td>SLIKA ARTIKLA: </td><td><input type='text' name='SLIKA_ARTIKLA' value='' size='30'></td></tr>";
 				echo "<tr><td colspan=\"2\"><INPUT TYPE='submit' name='dodaj_artikl' value='Dodaj novi artikl...'></td></tr>";
 		echo "</form>";
 		echo "</table>";
