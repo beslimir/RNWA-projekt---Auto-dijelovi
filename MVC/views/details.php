@@ -43,7 +43,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="../home.php">
-                    <img src="images/logo.png" alt="Logo" href="../home.php" height="150" width="150" style="margin-top:-50px;"/>
+                    <img src="../images/logo.png" alt="Logo" href="../home.php" height="150" width="150" style="margin-top:-50px;"/>
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -60,6 +60,9 @@
                     </li>
 					<li>
                         <a href="../web_servisi.php">Web servisi</a>
+                    </li>
+					<li>
+                        <a href="../administracija.php">Dodaj artikl</a>
                     </li>
 					<li>
                         <a href="mvc.php">MVC</a>

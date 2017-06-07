@@ -40,7 +40,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="home.php">
                     <img src="images/logo.png" alt="Logo" height="150" width="150" style="margin-top:-50px;"/>
                 </a>
             </div>
@@ -58,6 +58,9 @@
                     </li>
 					<li>
                         <a href="web_servisi.php">Web servisi</a>
+                    </li>
+					<li>
+                        <a href="administracija.php">Dodaj artikl</a>
                     </li>
 					<li>
                         <a href="MVC/mvc.php">MVC</a>

@@ -62,6 +62,9 @@
                         <a href="web_servisi.php">Web servisi</a>
                     </li>
 					<li>
+                        <a href="administracija.php">Dodaj artikl</a>
+                    </li>
+					<li>
                         <a href="MVC/mvc.php">MVC</a>
                     </li>
                     <li>

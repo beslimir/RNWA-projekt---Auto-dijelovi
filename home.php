@@ -103,6 +103,9 @@
                         <a href="web_servisi.php">Web servisi</a>
                     </li>
 					<li>
+                        <a href="administracija.php">Dodaj artikl</a>
+                    </li>
+					<li>
                         <a href="MVC/mvc.php">MVC</a>
                     </li>
                     <li>
@@ -131,7 +134,7 @@
 	<!-- style="padding-top:20px;" set to container below -->
     <div class="container" >
         <!-- Heading Row -->
-		<div class="row">
+		<div class="row" style="margin-top:-65px;">
 				<div class=".col-md-6">
 					<div>
 						<div class="bs-example">
@@ -188,7 +191,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Bešlimir's 2017.</p>
+                    <p align="center">Copyright &copy; Bešlimir's 2017.</p>
                 </div>
             </div>
         </footer>
